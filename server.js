@@ -1,12 +1,13 @@
 const express = require('express')
 const morgan = require('morgan')
 const basicAuth = require('express-basic-auth')
+const randomstring = require("randomstring");
 
 // http://localhost:3000/58dx37 이런식으로 shortUrl이 생성
 // 접속시 302가오고 
 const data = [
   {
-    longUrl: 'http://google.com', id: '58DX37'
+    longUrl: 'http://google.com', id: randomstring.generate(6)
   }
 ]
 
