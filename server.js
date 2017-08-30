@@ -33,8 +33,21 @@ app.get('/', (req, res) => {
   
 })
 
+app.get('/:id', (req, res) => {
+  const id = req.params.id
+  const matched = data.find(item => item.id === id)
+  if(matched){
+    // longUrl로 보내준다.
+    res.redirect(301, matched.longUrl)
+  }else {
+    res.status(404)
+    res.send('404 not found')
+  }
+
+})
 
 // 서버를 3000 port로 구동
 app.listen(3000, () => {
   console.log('listening...')
 })
+
