@@ -8,7 +8,21 @@
   <title>Document</title>
 </head>
 <body>
-hi index hello It's  11
-
+<table>  
+  <thead>
+    <tr>
+      <td>Long URL</td>
+      <td>Short URL</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.forEach(item => {  %>
+      <tr>
+        <td><%= item.longUrl %></td>
+        <td><%= item.id %> </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
 </body>
 </html>
